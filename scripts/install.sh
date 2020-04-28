@@ -3,7 +3,9 @@
 #   Installiert den Apache Web Server
 #
 
-sudo apt install -y apache2 jq markdown mariadb-server
+# Install apache, MariaDB Database Server, php, ftp, powershell, markdown to HTML
+sudo apt update && sudo apt dist-upgrade && sudo apt autoremove
+sudo apt install -y apache2 php libapache2-mod-php vsftpd markdown mariadb-server mariadb-client
 
 # Home Verzeichnis unter http://<host>/data/ verfuegbar machen
 mkdir -p /home/ubuntu/data/
