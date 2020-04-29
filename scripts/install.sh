@@ -6,6 +6,7 @@
 # Install apache, MariaDB Database Server, php, ftp, powershell, markdown to HTML
 # siehe https://websiteforstudents.com/install-apache2-mariadb-and-php-7-2-with-phpmyadmin-on-ubuntu-16-04-18-04-18-10-lamp-phpmyadmin/
 sudo apt-get update && sudo apt dist-upgrade && sudo apt autoremove
+sudo apt-get install debconf-utils
 sudo apt-get install -y apache2 php libapache2-mod-php vsftpd markdown mariadb-server mariadb-client
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
@@ -23,7 +24,7 @@ echo "phpmyadmin phpmyadmin/mysql/admin-pass password $ROOT_PASS" | debconf-set-
 echo "phpmyadmin phpmyadmin/mysql/app-pass password $APP_DB_PASS" | debconf-set-selections
 echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
 
-apt-get install -y phpmyadmin
+sudo apt-get install -y phpmyadmin
 
 
 # Home Verzeichnis unter http://<host>/data/ verfuegbar machen
