@@ -39,6 +39,7 @@ echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | sudo de
 
 sudo apt-get install -y phpmyadmin 
 
+# siehe https://unix.stackexchange.com/questions/190549/command-for-setting-documentroot-for-apache-on-debian
 cat <<%EOF% | sudo tee /etc/apache2/sites-available/m104.conf
 <VirtualHost *:8080>
     DocumentRoot /data
@@ -47,8 +48,9 @@ cat <<%EOF% | sudo tee /etc/apache2/sites-available/m104.conf
 </VirtualHost>
 %EOF%
 
-a2dissite 000-default
-a2ensite bticino
+# Defaultseite disablen?
+# a2dissite 000-default
+a2ensite m104
 service apache2 reload
 #sudo systemctl apache2 restart
 
