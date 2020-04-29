@@ -35,10 +35,22 @@ echo "phpmyadmin phpmyadmin/mysql/app-pass password $APP_DB_PASS" | sudo debconf
 echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | sudo debconf-set-selections
 
 # nötig?
-echo "phpmyadmin phpmyadmin/internal/skip-preseed boolean true" | sudo debconf-set-selections
+# echo "phpmyadmin phpmyadmin/internal/skip-preseed boolean true" | sudo debconf-set-selections
 
 sudo apt-get install -y phpmyadmin 
-sudo systemctl apache2 restart
+
+cat <<%EOF% | sudo tee /etc/apache2/sites-available/m104.conf
+<VirtualHost *:8080>
+    DocumentRoot /data
+    ErrorLog ${APACHE_LOG_DIR}/m104-error.log
+    CustomLog ${APACHE_LOG_DIR}/m104-access.log combined
+</VirtualHost>
+%EOF%
+
+a2dissite 000-default
+a2ensite bticino
+service apache2 reload
+#sudo systemctl apache2 restart
 
 # Introseite (= README dieses Repository)
 bash -x /opt/lernmaas/helper/intro
