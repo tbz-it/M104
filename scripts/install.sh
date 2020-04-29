@@ -12,7 +12,19 @@ sudo add-apt-repository ppa:ondrej/php
 # update to PHP 7.2-FPM
 sudo apt-get update
 sudo apt-get install php7.2-fpm php7.2-common php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-intl php7.2-mysql php7.2-cli php7.2-zip php7.2-curl
-sudo apt-get install -y phpmyadmin
+
+APP_PASS="your-app-pwd"
+ROOT_PASS="your-admin-db-pwd"
+APP_DB_PASS="your-app-db-pwd"
+
+echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/app-password-confirm password $APP_PASS" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/mysql/admin-pass password $ROOT_PASS" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/mysql/app-pass password $APP_DB_PASS" | debconf-set-selections
+echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | debconf-set-selections
+
+apt-get install -y phpmyadmin
+
 
 # Home Verzeichnis unter http://<host>/data/ verfuegbar machen
 mkdir -p /home/ubuntu/data/
