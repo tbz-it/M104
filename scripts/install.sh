@@ -5,14 +5,14 @@
 
 # Install apache, MariaDB Database Server, php, ftp, powershell, markdown to HTML
 # siehe https://websiteforstudents.com/install-apache2-mariadb-and-php-7-2-with-phpmyadmin-on-ubuntu-16-04-18-04-18-10-lamp-phpmyadmin/
-sudo apt update && sudo apt dist-upgrade && sudo apt autoremove
-sudo apt install -y apache2 php libapache2-mod-php vsftpd markdown mariadb-server mariadb-client
+sudo apt-get update && sudo apt dist-upgrade && sudo apt autoremove
+sudo apt-get install -y apache2 php libapache2-mod-php vsftpd markdown mariadb-server mariadb-client
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 # update to PHP 7.2-FPM
-sudo apt update
-sudo apt install php7.2-fpm php7.2-common php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-intl php7.2-mysql php7.2-cli php7.2-zip php7.2-curl
-sudo apt install phpmyadmin
+sudo apt-get update
+sudo apt-get install php7.2-fpm php7.2-common php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-intl php7.2-mysql php7.2-cli php7.2-zip php7.2-curl
+sudo apt-get install -y phpmyadmin
 
 # Home Verzeichnis unter http://<host>/data/ verfuegbar machen
 mkdir -p /home/ubuntu/data/
