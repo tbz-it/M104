@@ -7,6 +7,8 @@
 # siehe https://websiteforstudents.com/install-apache2-mariadb-and-php-7-2-with-phpmyadmin-on-ubuntu-16-04-18-04-18-10-lamp-phpmyadmin/
 sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
 sudo apt-get install debconf-utils
+exit 0
+
 sudo apt-get install -y apache2 vsftpd markdown 
 # php libapache2-mod-php 
 
