@@ -2,6 +2,14 @@
 #   
 #   Installiert den Apache Web Server
 #
+sudo apt install -y apache2 jq markdown mariadb-server
+sudo chmod -R g=u,o=u /home/ubuntu/data/
+
+# Introseite (= README dieses Repository)
+bash -x /opt/lernmaas/helper/intro
+
+exit 0
+
 # export KUBECONFIG=$HOME/.kube/config
 # kubectl apply -f ~/M104/mysql.yaml
 # kubectl apply -f ~/M104/phpmyadmin.yaml
