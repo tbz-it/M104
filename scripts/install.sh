@@ -53,17 +53,16 @@ echo "Defining a virtual host..."
 cat <<%EOF% | sudo tee /etc/apache2/sites-available/m104.conf
 <VirtualHost *:8080>
     DocumentRoot /data
-    ErrorLog ${APACHE_LOG_DIR}/m104-error.log
-    CustomLog ${APACHE_LOG_DIR}/m104-access.log combined
+    ErrorLog m104-error.log
+    CustomLog m104-access.log combined
 </VirtualHost>
 %EOF%
 
 echo "Enabling new site..."
 # Defaultseite disablen?
 # a2dissite 000-default
-a2ensite m104
-service apache2 reload
-#sudo systemctl apache2 restart
+sudo a2ensite m104
+sudo service apache2 reload
 
 # Introseite (= README dieses Repository)
 bash -x /opt/lernmaas/helper/intro
