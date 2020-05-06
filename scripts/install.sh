@@ -2,6 +2,10 @@
 #   
 #   Installiert den Apache Web Server
 #
+export KUBECONFIG=$HOME/.kube/config
+kubectl apply -f ~/M104/mysql.yaml
+kubectl apply -f ~/M104/phpmyadmin.yaml
+exit 0
 
 # Install apache, MariaDB Database Server, php, ftp, powershell, markdown to HTML
 # siehe https://websiteforstudents.com/install-apache2-mariadb-and-php-7-2-with-phpmyadmin-on-ubuntu-16-04-18-04-18-10-lamp-phpmyadmin/
