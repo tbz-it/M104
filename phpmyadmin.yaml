@@ -32,10 +32,10 @@ spec:
     spec:
       containers:
       - name: phpmyadmin
-        image: campbellsoftwaresolutions/osticket
+        image: phpmyadmin/phpmyadmin
         env:
         - name: MYSQL_HOST
-          value: osticket-mysql
+          value: phpmyadmin-mysql
         - name: MYSQL_PASSWORD
           value: secret        
         ports:
