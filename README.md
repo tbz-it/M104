@@ -8,9 +8,16 @@
 
 ## User Interface
 
-**Administrator**
+**phpmyadmin**
   
-URL [http://${ADDR}/scp/](http://${ADDR}/scp)
+URL [http://${ADDR}](http://${ADDR})
 	
 * username: root
-* password: rootPW
+* password: secret
+
+## Datenbank
+
+IP-Adresse: ${ADDR}
+Port      : 3306
+username  : root         phpmyadmin
+password  : secret       secret
