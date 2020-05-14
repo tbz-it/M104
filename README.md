@@ -17,7 +17,7 @@ URL [http://${ADDR}](http://${ADDR})
 
 ## Datenbank
 
-IP-Adresse: ${ADDR}
-Port      : 3306
-username  : root         phpmyadmin
-password  : secret       secret
+* IP-Adresse: ${ADDR}
+* Port      : 3306
+* username  : root         phpmyadmin
+* password  : secret       secret
