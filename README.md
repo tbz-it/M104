@@ -19,5 +19,5 @@ URL [http://${ADDR}](http://${ADDR})
 
 * IP-Adresse: ${ADDR}
 * Port      : 3306
-* username  : root         phpmyadmin
-* password  : secret       secret
+* username/PW  : root / secret
+* username/PW  : phpmyadmin / secret
