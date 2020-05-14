@@ -36,8 +36,14 @@ spec:
         env:
         - name: MYSQL_HOST
           value: phpmyadmin-mysql
+        - name: MYSQL_ROOT_PASSWORD
+          value: secret
+        - name: MYSQL_USER
+          value: phpmyadmin
         - name: MYSQL_PASSWORD
           value: secret        
+        - name: PMA_HOST
+          value: mysql
         ports:
         - containerPort: 80
           name: phpmyadmin
