@@ -4,7 +4,7 @@ metadata:
   name: phpmyadmin
   labels:
     app: phpmyadmin
-    group: iot
+    group: customer
     tier: frontend
 spec:
   type: LoadBalancer
