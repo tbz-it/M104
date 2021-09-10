@@ -3,14 +3,14 @@ kind: Service
 metadata:
   name: phpmyadmin-mysql
   labels:
-    app: phpmyadmin
+    app: phpmyadmin-mysql
 spec:
   type: LoadBalancer
   ports:
     - port: 3306
       protocol: TCP
   selector:
-    app: phpmyadmin
+    app: phpmyadmin-mysql
     tier: mysql
 ---
 apiVersion: apps/v1
@@ -18,18 +18,18 @@ kind: Deployment
 metadata:
   name: phpmyadmin-mysql
   labels:
-    app: phpmyadmin
+    app: phpmyadmin-mysql
 spec:
   selector:
     matchLabels:
-      app: phpmyadmin
+      app: phpmyadmin-mysql
       tier: mysql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: phpmyadmin
+        app: phpmyadmin-mysql
         tier: mysql
     spec:
       containers:
@@ -47,4 +47,3 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
-        
