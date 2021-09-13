@@ -13,6 +13,7 @@ spec:
     protocol: TCP
   selector:
     app: phpmyadmin
+    tier: frontend
 ---
 apiVersion: apps/v1
 kind: Deployment
